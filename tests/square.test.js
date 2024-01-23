@@ -1,4 +1,4 @@
-const Shape = require('../shape.js');
+const Shape = require('.tests/shape.js');
 
 //test if squar4e shape is chosen, use this file
 describe('Shape', () => {
