@@ -1,16 +1,9 @@
 //Import Inquirer and FS packages
 const inquirer = require('inquirer');
 const fs = require('fs');
-
-// class Shape to include text, fontColor, shapeColor
-class Index {
-    constructor (text, fontColor, shapeColor, shape) {
-        this.text = text;
-        this.fontColor = fontColor;
-        this.shapeColor = shapeColor;
-        this.shape = shape;
-    }
-}
+const Circle = require('./lib/shapes/circle');
+const Square = require('./lib/shapes/square');
+const Triangle = require('./lib/shapes/triangle');
 
 //asks user questions about what text, font color, shape and shape color they want for their logo
 function askQuestions() {
@@ -18,8 +11,8 @@ function askQuestions() {
     .prompt([
       {
         type: 'input',
-        name: 'text',
         message: 'What is the text you want for your logo?',
+        name: 'text',
       },
       {
         type: 'list',
@@ -41,15 +34,23 @@ function askQuestions() {
       },
     ])
     .then((response) => {
-      inquirer.prompt();
-      fs.writeFile('svgLogo.svg', (err) =>
-        err ? console.log(err) : console.log('Success!')
-      );
-    });
+        console.log(response);
+        let newShape;
+        if (response.shape === 'triangle') {
+            newShape = new Triangle (response.text, response.fontColor, response.shapeColor).generateTriangle();
+        } else if(response.shape === 'circle') {
+            newShape = new Circle (response.text, response.fontColor, response.shapeColor).generateCircle();
+        } else if(response.shape === 'square') {
+            newShape = new Square (response.text, response.fontColor, response.shapeColor).generateSquare();
+        } else {
+            console.log("Shape not selected. Please select a shape to continue.");
+        }
+      fs.writeFile('./examples/svgLogo.svg', newShape, (err) =>
+        console.log('Success!')
+      )
+    })
+    .catch((error) => console.log(error));
 }
 
 //Call function askQuestions()
 askQuestions();
-
-// Constructor Shape is exported from the file
-module.exports = Index;
