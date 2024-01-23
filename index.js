@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // class Shape to include text, fontColor, shapeColor
-class Shape {
+class Index {
     constructor (text, fontColor, shapeColor, shape) {
         this.text = text;
         this.fontColor = fontColor;
@@ -42,7 +42,7 @@ function askQuestions() {
     ])
     .then((response) => {
       inquirer.prompt();
-      fs.writeFile('svgLogo.svg',response, (err) =>
+      fs.writeFile('svgLogo.svg', (err) =>
         err ? console.log(err) : console.log('Success!')
       );
     });
@@ -52,4 +52,4 @@ function askQuestions() {
 askQuestions();
 
 // Constructor Shape is exported from the file
-module.exports = Shape;
+module.exports = Index;
