@@ -2,16 +2,12 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 - The motivation is to learn to create a Node command line application two create a SVG logo.
 - The project was built to create a logo with code.
 - The problem this project solves is further understanding of Node.
 - I learned how to create a logo placeholder logo using Node.js.
 
 ## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -35,19 +31,18 @@ https://github.com/harleysherman/svgLogoCreator.
 
 Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Here's the link to the video below:
+[Video Link]()
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Here's the link to the svg example:
+[logo.svg](./examples/logo.svg)
+
+Here's the GitHub link where the repo lives:
+[svgLogoCreator](https://github.com/harleysherman/svgLogoCreator)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+I want to thank Leif for helping me understand how to install the inquirer package in package.json and explaining how to connect all the the js files together through inheritance. I want to thank Charles for helping explaining the 'this' usage in the triangle, square, and circle js files.
 
 ## License
 
@@ -57,18 +52,25 @@ The license used in this project is MIT License.
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+![jest](https://img.shields.io/badge/jest-testing-blue)
+![inquirer](https://img.shields.io/badge/inquirer-package-green)
+![fs](https://img.shields.io/badge/fs-package-green)
 
 ## Features
 
-If your project has a lot of features, list them here.
+The features of this project are listed below:
+- Prompting the user for logo text, text color, and choice of shape in list form
+- From these user choices, an logo template will be created as svg file type that is 300px by 200px.
+- Special note: there are no hexadecimal numbers due to the importance of user experience. Most developers and even designers do not know hexadecimal numbers off the top of their head. Most people use hexadecimals with the help of a color picker. In future development, one will be added.
 
 ## How to Contribute
 
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+
+For any violations of this project, contact me hello@harleysherman.com.
 
 ## Tests
 
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+If you press enter on the shape choice instead of picking a choice, it will prompt an error to display in the terminal that states you must choose a shape in order to continue.
+
+All shape options are tested to make sure that they do in fact match the user's choice. These tests are located in circle.test.js, shape.test.js, square.test.js, and triangle.test.js.

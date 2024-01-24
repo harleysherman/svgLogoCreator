@@ -11,7 +11,7 @@ function askQuestions() {
     .prompt([
       {
         type: 'input',
-        message: 'What is the text you want for your logo?',
+        message: 'What is the text you want for your logo? Enter up to 3 characters.',
         name: 'text',
       },
       {
@@ -45,7 +45,7 @@ function askQuestions() {
         } else {
             console.log("Shape not selected. Please select a shape to continue.");
         }
-      fs.writeFile('./examples/svgLogo.svg', newShape, (err) =>
+      fs.writeFile('./examples/logo.svg', newShape, (err) =>
         console.log('Success!')
       )
     })
