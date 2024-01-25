@@ -1,13 +1,16 @@
-const Shape = require('.tests/shape.js');
+const Circle = require('../lib/shapes/circle');
 
-//test if triangle shape is chosen, use this file
-describe('Shape', () => {
-    // A test is created to check that user's shape is triangle
-    describe('circle', () => {
-      it('should shape equal circle', () => {
-        const userShape = "circle";
-        const shape = new Shape();
-        expect(shape.askQuestions()).toEqual(userShape);
-      });
+// A test is created to check that user's shape is Circle
+describe('circle', () => {
+    it('should shape equal circle', () => {
+        const userShape = Circle;
+        const circle = new Circle("try", "magenta", "green");
+        expect(circle).toBeInstanceOf(userShape);
     });
-  });
+    //A test to check the text is given
+    it('should set text if text is given', () => {
+        const circle = new Circle("try", "magenta", "green");
+        expect(circle.text).toEqual("try");
+    })
+});
+

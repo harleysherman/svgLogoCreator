@@ -1,24 +1,18 @@
-//Import Inquirer and FS packages
-const inquirer = require('inquirer');
-const fs = require('fs');
+const Shape = require('../lib/shapes/shape');
 
-// class Shape to include text, fontColor, shapeColor
-class Shape {
-    constructor (text, fontColor, shapeColor, shape) {
-        this.text = text;
-        this.fontColor = fontColor;
-        this.shapeColor = shapeColor;
-        this.shape = shape;
-    }
-}
-
-//test to check if text is no more than three characters
-// describe('Shape', () => {
-//   it('should be no more than three characters', () => {
-//     const userText = "test";
-
-//   })
-// });
-
-// Constructor Shape is exported from the file
-module.exports = Shape;
+//A test to check if shape is entered
+describe('shape', () => {
+  it('should be a shape selected', () => {
+    const someShape = Shape;
+    const shape = new Shape("try", "LimeGreen", "Black");
+    expect(shape).toBeInstanceOf(Shape);
+  });
+  //Test to check text is no more than 3 characters
+  it('should be no more than 3 characters', () => {
+    const cb = () => new Shape('johndoe');
+    const err = new Error(
+      'Text must not be more than 3 characters. Please try again.'
+    );
+    expect(cb).toThrowError(err);
+  });
+});

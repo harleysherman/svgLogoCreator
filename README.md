@@ -32,7 +32,7 @@ https://github.com/harleysherman/svgLogoCreator.
 Provide instructions and examples for use. Include screenshots as needed.
 
 Here's the link to the video below:
-[Video Link]()
+[Video Link](https://drive.google.com/file/d/1u5lhhDJqgo9G-cqjxq8IiKUi3uVpbUX5/view)
 
 Here's the link to the svg example:
 [logo.svg](./examples/logo.svg)
@@ -71,6 +71,10 @@ For any violations of this project, contact me hello@harleysherman.com.
 
 ## Tests
 
-If you press enter on the shape choice instead of picking a choice, it will prompt an error to display in the terminal that states you must choose a shape in order to continue.
+1. If you press enter on the shape choice instead of picking a choice, it will prompt an error to display in the terminal that states you must choose a shape in order to continue.
 
-All shape options are tested to make sure that they do in fact match the user's choice. These tests are located in circle.test.js, shape.test.js, square.test.js, and triangle.test.js.
+2. All shape options are tested to make sure that they do in fact match the user's choice. These tests are located in circle.test.js, shape.test.js, square.test.js, and triangle.test.js.
+
+3. The user must enter a title that is no more than three characters. If the user enters more than that, an error will be displayed that prompts the user to enter the right amount of characters.
+
+4. There is also several test checking to make sure text is valid and working in all test files.

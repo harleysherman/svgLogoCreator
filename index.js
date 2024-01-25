@@ -13,6 +13,13 @@ function askQuestions() {
         type: 'input',
         message: 'What is the text you want for your logo? Enter up to 3 characters.',
         name: 'text',
+        validate: (text) => {
+            if(text.length > 3) {
+                return "Please re-enter no more than three characters.";
+            } else {
+                return true;
+            }
+        },
       },
       {
         type: 'list',
@@ -31,6 +38,13 @@ function askQuestions() {
           name: 'shape',
           message: 'Select your shape.',
           choices: ['triangle', 'circle', 'square'],
+          validate: (shape) => {
+            if(shape === "") {
+                return "Please enter a shape to continue.";
+            } else {
+                return true;
+            }
+        },
       },
     ])
     .then((response) => {
